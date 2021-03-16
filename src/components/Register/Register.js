@@ -15,7 +15,10 @@ function Register({onSubmitRegister}) {
     password: '',
   });
 
+  const [name, setName] = React.useState("")
+
   function handleInputChange(evt) {
+    setName(evt.value)
     console.log(evt)
     const { name, value } = evt.target;
     setFormValues({
@@ -95,6 +98,7 @@ function Register({onSubmitRegister}) {
           minLength="2"
           maxLength="30"
           onChange={handleInputChange}
+          value={name}
         />
         <Input
           id="email"
