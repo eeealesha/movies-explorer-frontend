@@ -19,6 +19,7 @@ export class MainApi {
 	}
 
 	register(name, email, password) {
+		console.log(name)
 		return this._getResponseData(fetch(`${this._baseUrl}/signup`, {
 			method: 'POST',
 			headers: this._headers,
