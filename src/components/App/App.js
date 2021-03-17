@@ -265,7 +265,6 @@ function App() {
 
   function deleteMovie(movie) {
     const movieId = savedMovies.find((item) => item.id === movie.id)._id
-    console.log(movieId)
     mainApi
       .deleteMovies(movieId)
       .then((res) => {

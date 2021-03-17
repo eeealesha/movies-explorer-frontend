@@ -13,7 +13,6 @@ function SearchForm({ onSubmitSearch, onFilterShort, isLoading }) {
   }
 
   function handleOnSubmit(evt) {
-    console.log(evt)
     evt.preventDefault()
     onSubmitSearch(query)
   }

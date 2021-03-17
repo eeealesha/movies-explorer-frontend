@@ -32,7 +32,7 @@ function MoviesCard({ savedMovies, movie, onBookmarkClick, isSavedMovie }) {
             <div className="card__delete" onClick={handleOnDelete}></div>
           ) : (
             <button className={`card__heart`} onClick={handleBookmarkClick}>
-              {isSavedMovie ? (
+              {!isSaved ? (
                 <svg
                   width="14"
                   height="12"

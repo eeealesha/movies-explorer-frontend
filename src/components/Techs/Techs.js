@@ -1,14 +1,15 @@
-import './Techs.css';
-import SectionTitle from '../SectionTitle/SectionTitle';
+import './Techs.css'
+import SectionTitle from '../SectionTitle/SectionTitle'
 
 function Techs() {
   return (
     <section className="techs" id="techs">
-      <SectionTitle
-        title="Технологии"
-      />
+      <SectionTitle title="Технологии" />
       <h3 className="techs__subtitle">7 технологий</h3>
-      <p className="techs__discription">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
+      <p className="techs__discription">
+        На курсе веб-разработки мы освоили технологии, которые применили в
+        дипломном проекте.
+      </p>
       <ul className="techs__list">
         <li className="techs__list-item">HTML</li>
         <li className="techs__list-item">CSS</li>
@@ -19,7 +20,7 @@ function Techs() {
         <li className="techs__list-item">mongoDB</li>
       </ul>
     </section>
-  );
+  )
 }
 
-export default Techs;
+export default Techs

@@ -1,9 +1,7 @@
-import './SectionTitle.css';
+import './SectionTitle.css'
 
-function SectionTitle({title}) {
-  return (
-    <h2 className="title">{title}</h2>
-  );
+function SectionTitle({ title }) {
+  return <h2 className="title">{title}</h2>
 }
 
-export default SectionTitle;
+export default SectionTitle

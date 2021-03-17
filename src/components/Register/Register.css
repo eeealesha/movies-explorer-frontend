@@ -1,4 +1,4 @@
-.register { 
+.register {
   padding: 70px;
   display: flex;
   flex-direction: column;
@@ -16,15 +16,14 @@
   padding: 40px 0;
 }
 
-
 @media (max-width: 1279px) {
-  .register { 
+  .register {
     padding: 232px 70px;
   }
 }
 
 @media (max-width: 767px) {
-  .register { 
+  .register {
     padding: 65px 30px;
     align-items: center;
   }

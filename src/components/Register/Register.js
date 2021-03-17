@@ -6,8 +6,6 @@ import { NavLink } from 'react-router-dom'
 import AuthForm from '../AuthForm/AuthForm'
 import useFormWithValidation from '../../hooks/useFormValidation'
 
-import { getErrorText, checkValid } from '../../utils/formValidator'
-
 function Register({ onSubmitRegister }) {
   const {
     values,
