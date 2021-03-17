@@ -117,7 +117,7 @@ function App() {
       .saveProfile(data)
       .then((profile) => {
         setCurrentUser(profile)
-        setTextPopup('Профиль успешно обновлен')
+        setTextPopup('Профиль обновлен')
         setIsInfoPopupOpen(true)
       })
       .catch((err) => {
@@ -171,7 +171,7 @@ function App() {
       .catch((err) => {
         localStorage.removeItem('initialMovies')
         setLoadingError(
-          'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'
+          'Во время запроса произошла ошибка. Подождите немного и попробуйте ещё раз'
         )
       })
   }
@@ -189,7 +189,7 @@ function App() {
       .catch((err) => {
         localStorage.removeItem('savedMovies')
         setLoadingError(
-          'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'
+          'Во время запроса произошла ошибка. Подождите немного и попробуйте ещё раз'
         )
       })
   }
