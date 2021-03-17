@@ -1,83 +1,33 @@
-import React from 'react';
-import './Register.css';
-import Input from '../Input/Input';
-import logo from '../../images/logo.svg';
-import { NavLink } from 'react-router-dom';
-import AuthForm from '../AuthForm/AuthForm';
+import React from 'react'
+import './Register.css'
+import Input from '../Input/Input'
+import logo from '../../images/logo.svg'
+import { NavLink } from 'react-router-dom'
+import AuthForm from '../AuthForm/AuthForm'
+import useFormWithValidation from '../../hooks/useFormValidation'
 
-import { getErrorText, checkValid } from '../../utils/formValidator';
+import { getErrorText, checkValid } from '../../utils/formValidator'
 
-function Register({onSubmitRegister}) {
-
-  const [formValues, setFormValues] = React.useState({
-    name: '',
-    email: '',
-    password: '',
-  });
-
-  const [name, setName] = React.useState("")
-
-  function handleInputChange(evt) {
-    setName(evt.value)
-    console.log(evt)
-    const { name, value } = evt.target;
-    setFormValues({
-      ...formValues,
-      [name] : value
-    });
-  }
-
-  const [errors, setErrors] = React.useState({
-    name: {
-      required: '',
-      minLength: '',
-      maxLength: '',
-    },
-    email: {
-      required: '',
-      minLength: '',
-      isEmail: '',
-    },
-    password: {
-      required: '',
-      minLength: '',
-    },
-  });
-
-  const [isSubmitDisabled, setIsSubmitDisabled] = React.useState(false);
-
-  React.useEffect(() => {
-
-    const { name, email, password } = formValues;
-
-    console.log(formValues)
-
-    const nameValid = checkValid('name', name);
-    const emailValid = checkValid('email', email);
-    const passwordValid = checkValid('password', password);
-
-    setErrors({
-      name: nameValid,
-      email: emailValid,
-      password: passwordValid,
-    });
-
-    const isNameValid = Object.values(nameValid).every((item) => item === '');
-    const isEmailValid = Object.values(emailValid).every((item) => item === '');
-    const isPasswordValid = Object.values(passwordValid).every((item) => item === '');
-
-    setIsSubmitDisabled(!isNameValid || !isEmailValid || !isPasswordValid);
-
-  }, [formValues]);
+function Register({ onSubmitRegister }) {
+  const {
+    values,
+    errors,
+    isValid,
+    handleChange,
+    resetForm,
+  } = useFormWithValidation({})
 
   function handleOnSubmit(evt) {
-    evt.preventDefault();
-    onSubmitRegister(formValues);
+    evt.preventDefault()
+    onSubmitRegister(values)
+    resetForm()
   }
 
   return (
     <section className="register">
-      <NavLink to="/" className="logo"><img src={logo} alt="Логотип"/></NavLink>
+      <NavLink to="/" className="logo">
+        <img src={logo} alt="Логотип" />
+      </NavLink>
       <h2 className="register__title">Добро пожаловать!</h2>
 
       <AuthForm
@@ -86,7 +36,7 @@ function Register({onSubmitRegister}) {
         linkText="Войти"
         linkSubText="Уже зарегистрированы?"
         link="/signin"
-        isSubmitDisabled={isSubmitDisabled}
+        isSubmitDisabled={isValid}
         handleOnSubmit={handleOnSubmit}
       >
         <Input
@@ -94,34 +44,36 @@ function Register({onSubmitRegister}) {
           name="name"
           type="text"
           placeholder="Имя"
-          errorText={getErrorText(errors.name)}
+          errorText={errors.name}
           minLength="2"
           maxLength="30"
-          onChange={handleInputChange}
-          value={name}
+          onChange={handleChange}
+          value={values.name || ''}
         />
         <Input
           id="email"
           name="email"
           type="email"
           placeholder="E-mail"
-          errorText={getErrorText(errors.email)}
+          errorText={errors.email}
           minLength="5"
           maxLength="100"
-          onChange={handleInputChange}
+          onChange={handleChange}
+          value={values.email || ''}
         />
         <Input
           id="password"
           name="password"
           type="password"
           placeholder="Пароль"
-          errorText={getErrorText(errors.password)}
+          errorText={errors.password}
           minLength="5"
-          onChange={handleInputChange}
+          onChange={handleChange}
+          value={values.password || ''}
         />
       </AuthForm>
     </section>
-  );
+  )
 }
 
-export default Register;
+export default Register

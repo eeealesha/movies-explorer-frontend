@@ -38,7 +38,7 @@
 }
 
 .header__menu-item:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .header__menu-item_active {
@@ -60,7 +60,7 @@
 }
 
 .header__signup:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .header__signin {
@@ -68,8 +68,8 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
-  color: #FFF;
-  background-color: #2BE080;
+  color: #fff;
+  background-color: #2be080;
   border: none;
   outline: none;
   padding: 0;
@@ -85,7 +85,7 @@
 }
 
 .header__signin:hover {
-  opacity: .8;  
+  opacity: 0.8;
 }
 
 .header__profile {
@@ -93,7 +93,7 @@
   height: 32px;
   border: none;
   outline: none;
-  background-color: #FFF;
+  background-color: #fff;
   margin-left: 35px;
   display: flex;
   align-items: center;
@@ -104,7 +104,7 @@
 }
 
 .header__profile:hover {
-  box-shadow: 0px 3px 14px rgba(0, 0, 0, .2);
+  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.2);
 }
 
 .header__profile-text {
@@ -114,14 +114,14 @@
   font-size: 13px;
   line-height: 12px;
   padding: 0 7px;
-  color: #000
+  color: #000;
 }
 
 .header__profile-img {
   width: 26px;
   height: 26px;
   padding: 7px;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   border-radius: 50%;
   box-sizing: border-box;
 }
@@ -192,7 +192,6 @@
 @media (max-width: 1279px) {
   .header {
     padding: 18px 30px;
-
   }
   .header__cover {
     display: block;
@@ -201,17 +200,17 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 2;
     visibility: visible;
     opacity: 1;
-    transition: visibility .3s, opacity .3s linear;
+    transition: visibility 0.3s, opacity 0.3s linear;
   }
 
   .header__cover_hidden {
     visibility: hidden;
     opacity: 0;
-    transition: visibility .3s, opacity .3s ease;
+    transition: visibility 0.3s, opacity 0.3s ease;
   }
 
   .header__menu {
@@ -220,7 +219,7 @@
     width: 520px;
     top: 0;
     right: 0;
-    background-color: #FFF;
+    background-color: #fff;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -241,7 +240,7 @@
     margin: 0;
     margin-top: 1000px;
   }
-  
+
   .header__open-menu {
     display: flex;
   }
@@ -259,17 +258,17 @@
   .header {
     padding: 18px 30px;
   }
-  
+
   .header__menu {
     max-width: 100%;
-    padding-top: 144px ;
+    padding-top: 144px;
   }
 
   .header__menu-item {
     padding: 12px;
   }
 
-  .header__profile {   
+  .header__profile {
     bottom: 46px;
     margin-top: 450px;
   }
