@@ -21,7 +21,6 @@ function Profile({ onSaveProfile, onSignOut }) {
   function handleOnSubmit(evt) {
     evt.preventDefault()
     onSaveProfile(values)
-    resetForm()
   }
 
   return (
@@ -43,9 +42,8 @@ function Profile({ onSaveProfile, onSignOut }) {
               type="text"
               name="name"
               placeholder={currentUser.name}
+              pattern="[a-zA-Z -]{2,30}"
               required
-              minLength="2"
-              maxLength="30"
               value={values.name}
               onChange={handleChange}
             />
@@ -64,7 +62,7 @@ function Profile({ onSaveProfile, onSignOut }) {
             <input
               className="profile__input profile__input_type_email"
               id="email-input"
-              type="text"
+              type="email"
               name="email"
               placeholder={currentUser.email}
               required
@@ -86,8 +84,8 @@ function Profile({ onSaveProfile, onSignOut }) {
           <button
             type="submit"
             className={`profile__button profile__button_type_edit 
-            ${isValid && 'profile__button_disabled'}`}
-            disabled={isValid}
+            ${!isValid && 'profile__button_disabled'}`}
+            disabled={!isValid}
           >
             Редактировать
           </button>
