@@ -4,7 +4,7 @@ import './MoviesCard.css'
 function MoviesCard({ savedMovies, movie, onBookmarkClick, isSavedMovie }) {
   const { nameRU, duration, trailer, image } = movie
 
-  let isSaved = isSavedMovie(movie)
+  const isSaved = isSavedMovie(movie)
 
   function durationFormat(duration) {
     const hh = Math.trunc(duration / 60)
