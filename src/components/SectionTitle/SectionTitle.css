@@ -12,7 +12,6 @@
   align-self: stretch;
 }
 
-
 @media (max-width: 767px) {
   .title {
     font-size: 18px;

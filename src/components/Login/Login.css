@@ -1,4 +1,4 @@
-.login { 
+.login {
   padding: 70px;
   display: flex;
   flex-direction: column;
@@ -17,13 +17,13 @@
 }
 
 @media (max-width: 1279px) {
-  .login { 
+  .login {
     padding: 232px 70px;
   }
 }
 
 @media (max-width: 767px) {
-  .login { 
+  .login {
     padding: 65px 30px;
     align-items: center;
   }

@@ -1,14 +1,23 @@
-import './FilterCheckbox.css';
+import React from 'react'
+import './FilterCheckbox.css'
 
-function FilterCheckbox() {
+function FilterCheckbox({ onFilter }) {
+  function handleOnChange(evt) {
+    onFilter(evt.target.checked)
+  }
+
   return (
-     
-    <div className="checkbox">  
-      <input type="checkbox" value="None" id="filter" name="check" className="checkbox__input" />
-      <label for="filter" className="checkbox__label"></label>
+    <div className="checkbox">
+      <input
+        type="checkbox"
+        id="filter"
+        name="check"
+        className="checkbox__input"
+        onChange={handleOnChange}
+      />
+      <label htmlFor="filter" className="checkbox__label"></label>
     </div>
-    
-  );
+  )
 }
 
-export default FilterCheckbox;
+export default FilterCheckbox

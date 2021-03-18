@@ -8,10 +8,10 @@
   font-size: 13px;
   line-height: 16px;
   text-align: center;
-  color: #A0A0A0;
+  color: #a0a0a0;
   margin: 0;
   padding: 59px 0 20px 0;
-  border-bottom: 1px #E8E8E8 solid;
+  border-bottom: 1px #e8e8e8 solid;
 }
 
 .footer__info {
@@ -45,7 +45,7 @@
   text-decoration: none;
   margin-left: 20px;
   box-sizing: border-box;
-  transition: ease .2s;
+  transition: ease 0.2s;
 }
 
 .footer__link:hover {
@@ -89,6 +89,6 @@
     padding-top: 10px;
     font-size: 12px;
     line-height: 15px;
-    color: #A0A0A0;
+    color: #a0a0a0;
   }
 }

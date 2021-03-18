@@ -1,13 +1,30 @@
-import './Login.css';
-import Input from '../Input/Input';
-import logo from '../../images/logo.svg';
-import { NavLink } from 'react-router-dom';
-import AuthForm from '../AuthForm/AuthForm';
+import './Login.css'
+import Input from '../Input/Input'
+import logo from '../../images/logo.svg'
+import { NavLink } from 'react-router-dom'
+import AuthForm from '../AuthForm/AuthForm'
+import useFormWithValidation from '../../hooks/useFormValidation'
 
-function Register() {
+function Register({ onSubmitLogin }) {
+  const {
+    values,
+    errors,
+    isValid,
+    handleChange,
+    resetForm,
+  } = useFormWithValidation({})
+
+  function handleOnSubmit(evt) {
+    evt.preventDefault()
+    onSubmitLogin(values)
+    resetForm()
+  }
+
   return (
     <section className="login">
-      <NavLink to="/" className="logo"><img src={logo} alt="Логотип"/></NavLink>
+      <NavLink to="/" className="logo">
+        <img src={logo} alt="Логотип" />
+      </NavLink>
       <h2 className="login__title">Рады видеть!</h2>
 
       <AuthForm
@@ -16,6 +33,8 @@ function Register() {
         linkText="Регистрация"
         linkSubText="Ещё не зарегистрированы?"
         link="/signup"
+        isSubmitDisabled={isValid}
+        handleOnSubmit={handleOnSubmit}
       >
         <Input
           id="email"
@@ -24,7 +43,10 @@ function Register() {
           placeholder="E-mail"
           minLength="5"
           maxLength="100"
-        />  
+          errorText={errors.email}
+          onChange={handleChange}
+          value={values.email || ''}
+        />
         <Input
           id="password"
           name="password"
@@ -32,11 +54,13 @@ function Register() {
           placeholder="Пароль"
           errorText="Что-то пошло не так..."
           minLength="5"
-        /> 
+          errorText={errors.password}
+          onChange={handleChange}
+          value={values.password || ''}
+        />
       </AuthForm>
-
     </section>
-  );
+  )
 }
 
-export default Register;
+export default Register

@@ -3,14 +3,10 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, max-content); 
+  grid-template-columns: repeat(3, max-content);
   grid-gap: 10px;
   position: absolute;
   bottom: 30px;
-}
-
-.nav__item {
-  
 }
 
 .nav__link {
@@ -18,8 +14,8 @@
   font-size: 12px;
   line-height: 1.33;
   padding: 10px 17px;
-  color: #FFF;
-  background-color: #E8E8E8;
+  color: #fff;
+  background-color: #e8e8e8;
   border-radius: 10px;
   text-decoration: none;
 }
@@ -37,5 +33,4 @@
     line-height: 1.6;
     padding: 5px 15px;
   }
-
 }

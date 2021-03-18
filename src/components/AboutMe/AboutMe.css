@@ -80,7 +80,6 @@
   border-radius: 10px;
 }
 
-
 @media (max-width: 1279px) {
   .aboutme {
     padding: 90px 50px 90px;
@@ -108,7 +107,7 @@
   .aboutme {
     padding: 70px 14px 70px;
   }
-  .aboutme__container {    
+  .aboutme__container {
     flex-direction: column-reverse;
     align-items: center;
     padding: 60px 0 0;
